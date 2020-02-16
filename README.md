@@ -22,13 +22,13 @@ To configure the client, you can pass in a configuration object. Here is a list 
 #### Sample for changing the auth endpoint with JWT authentication:
 ```javascript
 let pusher = new Pusher(appID, publicKey, {
-    auth: {
-      endpoint: 'http://localhost:8080/push/auth',
-      headers: {
-        'Authorization': 'Bearer ' + jwt
-      }
+  auth: {
+    endpoint: 'http://localhost:8080/push/auth',
+    headers: {
+      'Authorization': 'Bearer ' + jwt
     }
-  });
+  }
+});
 ````
 
 ### Subscribing to channels
