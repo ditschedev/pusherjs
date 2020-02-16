@@ -1,0 +1,14 @@
+{
+  "name": "@ditsche/pusherjs",
+  "version": "1.0.0",
+  "description": "JavaScript client for the instup.co realtime api",
+  "main": "Pusher.js",
+  "author": "Tobias Dittmann",
+  "repository": "txbivs/pusherjs",
+  "license": "MIT",
+  "dependencies": {
+    "autobahn": "^20.2.1",
+    "axios": "^0.19.2",
+    "when": "^3.7.8"
+  }
+}
