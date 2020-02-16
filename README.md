@@ -36,15 +36,15 @@ let pusher = new Pusher(appID, publicKey, {
 #### Public channels
 After initiating the Pusher client, you can use the instances `subscribe` function to subscribe to channels. The following script connects to the channel `channel.name` and logs the payload, if something is pushed to the channel.
 ```javascript
-	pusher.subscribe('channel.name', (payload) => {
-		console.log(payload);
-	});
+pusher.subscribe('channel.name', (payload) => {
+	console.log(payload);
+});
 ```
 
 #### Private channels
 You can have private channels aswell. Before the user can subscribe to the desired channel, he must be pre-authenticated. Meaning that the client sends a request to the backend, asking if the current user with the current session id shall be allowed to access the desired channel. The usage is equivalent to the public subscription.
 ```javascript
-	pusher.subscribePrivate('channel.name', (payload) => {
-		console.log(payload);
-	});
+pusher.subscribePrivate('channel.name', (payload) => {
+	console.log(payload);
+});
 ```
