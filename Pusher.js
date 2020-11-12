@@ -10,11 +10,12 @@ export default class Pusher {
         endpoint: '/push/auth',
         headers: {}
       },
+      ws: 'ws://api.skriber.co:7474'
     }, opt);
     this.session = null;
     this.appID = appID;
     this.connection = new Connection({
-      url: 'ws://167.172.107.136:7474',
+      url: this.settings.ws,
       realm: 'default',
       onchallenge: (session, method, extra) => {
         if (method === 'token') {
@@ -52,7 +53,9 @@ export default class Pusher {
       }).then(() => {
         channel = this.appID + '_' + channel + '.private';
         session.subscribe(channel, callback);
-      })
+      }).catch(() => {
+        console.warn("Pusher: Not allowed to subscribe to channel \"" + channel + "\"");
+      });
     });
   }
 
